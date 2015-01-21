@@ -36,6 +36,7 @@
 /home/stefan/phonegap/videosplus/platforms/android/assets/www/css \
 /home/stefan/phonegap/videosplus/platforms/android/assets/www/cordova_plugins.js \
 /home/stefan/phonegap/videosplus/platforms/android/assets/www/js/index.js \
+/home/stefan/phonegap/videosplus/platforms/android/assets/www/img/icon.png \
 /home/stefan/phonegap/videosplus/platforms/android/assets/www/img/logo.png \
 /home/stefan/phonegap/videosplus/platforms/android/assets/www/css/index.css \
 /home/stefan/phonegap/videosplus/platforms/android/ant-build/AndroidManifest.xml \
