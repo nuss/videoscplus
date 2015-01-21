@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="org.basislager.videoscplus" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <name>VideOSC+</name>
+    <description>
+        A experimental OSC-controller built with phonegap.
+    </description>
+    <author email="stefan@basislager.org" href="http://pustota.basislager.org">
+        Stefan Nussbaumer
+    </author>
+    <content src="index.html" />
+    <preference name="fullscreen" value="true" />
+    <access origin="*" />
+</widget>
