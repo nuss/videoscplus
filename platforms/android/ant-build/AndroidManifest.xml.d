@@ -1,2 +1,2 @@
-/home/stefan/phonegap/videosplus/platforms/android/ant-build/AndroidManifest.xml : \
-/home/stefan/phonegap/videosplus/platforms/android/AndroidManifest.xml \
+/home/stefan/phonegap/videoscplus/platforms/android/ant-build/AndroidManifest.xml : \
+/home/stefan/phonegap/videoscplus/platforms/android/AndroidManifest.xml \

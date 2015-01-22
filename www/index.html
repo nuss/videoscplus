@@ -36,8 +36,19 @@
 
 		function onDeviceReady() {
 			document.getElementById("test").innerHTML = "loaded!";
-			console.log(this.OSCSender);
+			var sender = new OSCSender('192.168.1.9', 57120);
+			var listener = new OSCListener(9000);
+			// console.log([window.location.hostname, window.location.host, window.location.port]);
+			document.getElementById("send").onclick = function() {
+				sender.send(
+					'/test',
+					"hello nerd",
+					function() { console.log('sent!') },
+					function(e) { console.log(e) }
+				);
+			}
 		}
+
 		</script>
 	</head>
 	<body onload="onLoad()">
@@ -45,7 +56,7 @@
 			<h1>VideOSC+</h1>
 			<div id="deviceready" class="blink">
 				<p class="event listening">Connecting to Device</p>
-				<p class="event received"><a href="#">send test-message</a></p>
+				<p class="event received"><a id="send" href="#">send test-message</a></p>
 				<p id="test"></p>
 			</div>
 		</div>
