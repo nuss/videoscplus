@@ -24,11 +24,24 @@
                         }
                     ]
                 }
+            },
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"KeepScreenOn\"><param name=\"android-package\" value=\"com.mediamatrixdoo.keepscreenon.KeepScreenOn\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
             }
         }
     },
     "installed_plugins": {
         "nl.sylvain.cordova.osc": {
+            "PACKAGE_NAME": "org.basislager.videoscplus"
+        },
+        "com.mediamatrixdoo.keepscreenon": {
             "PACKAGE_NAME": "org.basislager.videoscplus"
         }
     },

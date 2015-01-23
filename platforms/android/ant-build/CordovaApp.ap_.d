@@ -36,7 +36,10 @@
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/index.html \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/css \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/cordova_plugins.js \
+/home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/com.mediamatrixdoo.keepscreenon \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/nl.sylvain.cordova.osc \
+/home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/com.mediamatrixdoo.keepscreenon/www \
+/home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/com.mediamatrixdoo.keepscreenon/www/keepscreenon.js \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/nl.sylvain.cordova.osc/www \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/nl.sylvain.cordova.osc/www/OSCSender.js \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/nl.sylvain.cordova.osc/www/OSCListener.js \

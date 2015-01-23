@@ -9,7 +9,7 @@
 	</author>
 	<feature name="debug-server" required="true">
 		<param name="domain" value="http://localhost:8080"/>
-		<param name="key" value="org.basislager.videosc"/>
+		<param name="key" value="org.basislager.videoscplus"/>
 	</feature>
 
 	<content src="index.html" />

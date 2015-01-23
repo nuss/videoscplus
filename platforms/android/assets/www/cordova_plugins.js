@@ -13,12 +13,20 @@ module.exports = [
         "clobbers": [
             "window.OSCSender"
         ]
+    },
+    {
+        "file": "plugins/com.mediamatrixdoo.keepscreenon/www/keepscreenon.js",
+        "id": "com.mediamatrixdoo.keepscreenon.keepscreenon",
+        "clobbers": [
+            "keepscreenon"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "nl.sylvain.cordova.osc": "0.1.0"
+    "nl.sylvain.cordova.osc": "0.1.0",
+    "com.mediamatrixdoo.keepscreenon": "1.0.1"
 }
 // BOTTOM OF METADATA
 });

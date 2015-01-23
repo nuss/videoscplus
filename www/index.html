@@ -35,14 +35,52 @@
 		}
 
 		function onDeviceReady() {
+			var count = 0;
+			keepscreenon.enable();
 			document.getElementById("test").innerHTML = "loaded!";
+
+			navigator.getUserMedia = (
+				navigator.getUserMedia ||
+				navigator.webkitGetUserMedia ||
+				navigator.mozGetUserMedia ||
+				navigator.msGetUserMedia
+			);
+
+			if (navigator.getUserMedia) {
+				navigator.getUserMedia (
+					// constraints
+					{ video: true, audio: false },
+					// successCallback
+					function(localMediaStream) {
+						var video = document.querySelector('video');
+						video.src = window.URL.createObjectURL(localMediaStream);
+						video.onloadmetadata = function(err) {
+							video.play();
+							console.log(err);
+						}
+					},
+					// errorCallback
+					function(err) {
+						console.log("The following error occured: " + err);
+					}
+				);
+			} else {
+				console.log("getUserMedia not supported");
+			}
+
 			var sender = new OSCSender('192.168.1.9', 57120);
 			var listener = new OSCListener(9000);
+			listener.startListening(function(success) {
+				console.log(success);
+			}, function(err) { console.log(err) });
+			listener.on('/reply', function(success) {
+				document.getElementById("test").innerHTML = success[0];
+			})
 			// console.log([window.location.hostname, window.location.host, window.location.port]);
 			document.getElementById("send").onclick = function() {
 				sender.send(
 					'/test',
-					"hello nerd",
+					"hello nerd "+count++,
 					function() { console.log('sent!') },
 					function(e) { console.log(e) }
 				);
@@ -52,7 +90,7 @@
 		</script>
 	</head>
 	<body onload="onLoad()">
-		<div class="app">
+		<div id="video" class="app">
 			<h1>VideOSC+</h1>
 			<div id="deviceready" class="blink">
 				<p class="event listening">Connecting to Device</p>
