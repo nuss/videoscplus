@@ -11,14 +11,6 @@
                         {
                             "xml": "<feature name=\"OSC\"><param name=\"android-package\" value=\"nl.sylvain.cordova.osc.OSCUtils\" /></feature>",
                             "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Capture\"><param name=\"android-package\" value=\"org.apache.cordova.mediacapture.Capture\" /></feature>",
-                            "count": 1
                         }
                     ]
                 }
@@ -28,18 +20,6 @@
                     "/*": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-                            "count": 2
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.RECORD_VIDEO\" />",
                             "count": 1
                         }
                     ]
@@ -63,14 +43,7 @@
         },
         "com.mediamatrixdoo.keepscreenon": {
             "PACKAGE_NAME": "org.basislager.videoscplus"
-        },
-        "org.apache.cordova.media-capture": {
-            "PACKAGE_NAME": "org.basislager.videoscplus"
         }
     },
-    "dependent_plugins": {
-        "org.apache.cordova.file": {
-            "PACKAGE_NAME": "org.basislager.videoscplus"
-        }
-    }
+    "dependent_plugins": {}
 }
