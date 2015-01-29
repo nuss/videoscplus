@@ -39,34 +39,7 @@
 			keepscreenon.enable();
 			document.getElementById("test").innerHTML = "loaded!";
 
-			navigator.getUserMedia = (
-				navigator.getUserMedia ||
-				navigator.webkitGetUserMedia ||
-				navigator.mozGetUserMedia ||
-				navigator.msGetUserMedia
-			);
-
-			if (navigator.getUserMedia) {
-				navigator.getUserMedia (
-					// constraints
-					{ video: true, audio: false },
-					// successCallback
-					function(localMediaStream) {
-						var video = document.querySelector('video');
-						video.src = window.URL.createObjectURL(localMediaStream);
-						video.onloadmetadata = function(err) {
-							video.play();
-							console.log(err);
-						}
-					},
-					// errorCallback
-					function(err) {
-						console.log("The following error occured: " + err);
-					}
-				);
-			} else {
-				console.log("getUserMedia not supported");
-			}
+			console.log([window.innerWidth, window.innerHeight]);
 
 			var sender = new OSCSender('192.168.1.9', 57120);
 			var listener = new OSCListener(9000);
