@@ -30,6 +30,9 @@
     "installed_plugins": {
         "nl.sylvain.cordova.osc": {
             "PACKAGE_NAME": "org.basislager.videoscplus"
+        },
+        "org.basislager.videocapture": {
+            "PACKAGE_NAME": "org.basislager.videoscplus"
         }
     },
     "dependent_plugins": {}

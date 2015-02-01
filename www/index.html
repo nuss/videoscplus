@@ -29,6 +29,7 @@
 		<title>VideOSC+</title>
 		<script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="videocapture.js"></script>
 		<script type="text/javascript">
 		function onLoad() {
 			document.addEventListener("deviceready", onDeviceReady, false);
@@ -40,9 +41,12 @@
 			document.getElementById("test").innerHTML = "loaded!";
 
 			console.log([window.innerWidth, window.innerHeight]);
-
-			var sender = new OSCSender('192.168.1.9', 57120);
+			var capture = new VideoCapture('test');
+			var sender = new OSCSender('192.168.1.8', 57120);
 			var listener = new OSCListener(9000);
+			capure.startCapture(function(success) {
+				console.log(success);
+			}, function(err) { console.log("error: "+err) });
 			listener.startListening(function(success) {
 				console.log(success);
 			}, function(err) { console.log(err) });

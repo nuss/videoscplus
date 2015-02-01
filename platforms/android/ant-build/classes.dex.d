@@ -56,6 +56,7 @@
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/classes/org/basislager/videoscplus/BuildConfig.class \
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/classes/org/basislager/videoscplus/R$attr.class \
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/classes/org/basislager/videoscplus/R.class \
+/home/stefan/phonegap/videoscplus/platforms/android/ant-build/classes/org/basislager/videocapture/VideoCapture.class \
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/classes/nl/sylvain/cordova/osc/OSCCallbackListener.class \
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/classes/nl/sylvain/cordova/osc/OSCUtils$3.class \
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/classes/nl/sylvain/cordova/osc/OSCUtils$1.class \
@@ -65,6 +66,7 @@
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/classes/nl/sylvain/cordova/osc/OSCUtils.class \
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/classes/nl/sylvain/cordova/osc/OSCUtils$4.class \
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/classes/nl/sylvain/cordova/osc/OSCUtils$7.class \
+/home/stefan/phonegap/videoscplus/platforms/android/ant-build/classes/VideoCapture/VideoCapture.class \
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/classes/com/mediamatrixdoo/keepscreenon/KeepScreenOn.class \
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/classes/com/mediamatrixdoo/keepscreenon/KeepScreenOn$1.class \
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/classes/com/mediamatrixdoo/keepscreenon/KeepScreenOn$2.class \
