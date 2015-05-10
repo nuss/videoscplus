@@ -31,6 +31,8 @@
 		<script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript" src="videocapture.js"></script>
 		<script type="text/javascript">
+		var sender, listener;
+
 		function onLoad() {
 			document.addEventListener("deviceready", onDeviceReady, false);
 		}
@@ -38,13 +40,17 @@
 		function onDeviceReady() {
 			var count = 0;
 			keepscreenon.enable();
-			document.getElementById("test").innerHTML = "loaded!";
 
-			console.log([window.innerWidth, window.innerHeight]);
+			document.getElementById("test").innerHTML = "loaded!";
+			document.getElementById('send').addEventListener('click', sendOnClick, false);
+
+			// console.log([window.innerWidth, window.innerHeight]);
 			var capture = new VideoCapture('test');
-			var sender = new OSCSender('192.168.1.8', 57120);
+			console.log(["sender: "+sender, "listener: "+listener]);
+			var sender = new OSCSender('192.168.1.4', 57120);
 			var listener = new OSCListener(9000);
-			capure.startCapture(function(success) {
+			console.log(["sender: "+sender, "listener: "+listener]);
+			capture.startCapture(function(success) {
 				console.log(success);
 			}, function(err) { console.log("error: "+err) });
 			listener.startListening(function(success) {
@@ -54,14 +60,23 @@
 				document.getElementById("test").innerHTML = success[0];
 			})
 			// console.log([window.location.hostname, window.location.host, window.location.port]);
-			document.getElementById("send").onclick = function() {
-				sender.send(
-					'/test',
-					"hello nerd "+count++,
-					function() { console.log('sent!') },
-					function(e) { console.log(e) }
-				);
-			}
+			// document.getElementById("send").onclick = function() {
+			// 	sender.send(
+			// 		'/test',
+			// 		"hello nerd "+count++,
+			// 		function() { console.log('sent!') },
+			// 		function(e) { console.log(e) }
+			// 	);
+			// }
+		}
+
+		function sendOnClick() {
+			sender.send(
+				'/test',
+				"hello nerd "+count++,
+				function() { console.log('sent!') },
+				function(e) { console.log(e) }
+			);
 		}
 
 		</script>
@@ -71,7 +86,7 @@
 			<h1>VideOSC+</h1>
 			<div id="deviceready" class="blink">
 				<p class="event listening">Connecting to Device</p>
-				<p class="event received"><a id="send" href="#">send test-message</a></p>
+				<p class="event received"><a id="send" href="#">send me roses</a></p>
 				<p id="test"></p>
 			</div>
 		</div>

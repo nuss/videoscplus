@@ -16,5 +16,6 @@
 	</author>
     <content src="index.html" />
     <preference name="fullscreen" value="true" />
+    <preference name="orientation" value="landscape" />
     <access origin="*" />
 </widget>
