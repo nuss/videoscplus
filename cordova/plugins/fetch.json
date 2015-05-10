@@ -1,0 +1,10 @@
+{
+    "org.basislager.videocapture": {
+        "source": {
+            "type": "local",
+            "path": "cordova/plugins/org.basislager.videocapture"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}
