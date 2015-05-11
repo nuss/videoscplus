@@ -46,9 +46,9 @@
 			document.getElementById('send').addEventListener('click', sendOnClick, false);
 
 			// console.log([window.innerWidth, window.innerHeight]);
-			// var capture = new VideoCapture('test');
 			console.log(["sender: "+sender, "listener: "+listener]);
-			sender = new OSCSender('192.168.1.4', 57120);
+			// sender = new OSCSender('192.168.1.4', 57120);
+			sender = new OSCSender('10.42.0.1', 57120);
 			listener = new OSCListener(9000);
 			console.log(["sender: "+sender, "listener: "+listener]);
 			// capture.startCapture(function(success) {
@@ -60,6 +60,7 @@
 			listener.on('/reply', function(success) {
 				document.getElementById("test").innerHTML = success[0];
 			});
+			var capture = new VideoCapture('test');
 		}
 
 		function sendOnClick() {
