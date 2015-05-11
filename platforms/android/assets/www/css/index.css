@@ -100,7 +100,7 @@ h1 {
 	height: 50px;
 }
 
-/*@keyframes fade {
+@keyframes fade {
 	from { opacity: 1.0; }
 	50% { opacity: 0.4; }
 	to { opacity: 1.0; }
@@ -116,10 +116,11 @@ h1 {
 	animation:fade 3000ms infinite;
 	-webkit-animation:fade 3000ms infinite;
 }
-*/
+
 .blink a {
 	text-decoration: none;
 	font-weight: bold;
+	font-size: 35px;
 	display: block;
 	width: inherit;
 	height: inherit;
@@ -127,10 +128,10 @@ h1 {
 
 .blink a:link, .blink a:visited {
 	color: #fff;
-	background-color: #0ff;
+	background-color: #00f;
 }
 
 .blink a:hover, .blink a:active {
-	color: #0ff;
+	color: #00f;
 	background-color: #fff;
 }

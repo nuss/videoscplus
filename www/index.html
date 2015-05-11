@@ -32,42 +32,34 @@
 		<script type="text/javascript" src="videocapture.js"></script>
 		<script type="text/javascript">
 		var sender, listener;
+		var count = 0;
 
 		function onLoad() {
 			document.addEventListener("deviceready", onDeviceReady, false);
+			// document.addEventListener(window, onUnload, false);
 		}
 
 		function onDeviceReady() {
-			var count = 0;
 			keepscreenon.enable();
 
 			document.getElementById("test").innerHTML = "loaded!";
 			document.getElementById('send').addEventListener('click', sendOnClick, false);
 
 			// console.log([window.innerWidth, window.innerHeight]);
-			var capture = new VideoCapture('test');
+			// var capture = new VideoCapture('test');
 			console.log(["sender: "+sender, "listener: "+listener]);
-			var sender = new OSCSender('192.168.1.4', 57120);
-			var listener = new OSCListener(9000);
+			sender = new OSCSender('192.168.1.4', 57120);
+			listener = new OSCListener(9000);
 			console.log(["sender: "+sender, "listener: "+listener]);
-			capture.startCapture(function(success) {
-				console.log(success);
-			}, function(err) { console.log("error: "+err) });
+			// capture.startCapture(function(success) {
+			// 	console.log(success);
+			// }, function(err) { console.log("error: "+err) });
 			listener.startListening(function(success) {
 				console.log(success);
 			}, function(err) { console.log(err) });
 			listener.on('/reply', function(success) {
 				document.getElementById("test").innerHTML = success[0];
-			})
-			// console.log([window.location.hostname, window.location.host, window.location.port]);
-			// document.getElementById("send").onclick = function() {
-			// 	sender.send(
-			// 		'/test',
-			// 		"hello nerd "+count++,
-			// 		function() { console.log('sent!') },
-			// 		function(e) { console.log(e) }
-			// 	);
-			// }
+			});
 		}
 
 		function sendOnClick() {
@@ -79,6 +71,13 @@
 			);
 		}
 
+		window.onunload = function() {
+			console.log('unloaded!');
+			listener.close(function(success) {
+				console.log(success)
+			}, function(err) { console.log(err)});
+		}
+
 		</script>
 	</head>
 	<body onload="onLoad()">
@@ -86,7 +85,7 @@
 			<h1>VideOSC+</h1>
 			<div id="deviceready" class="blink">
 				<p class="event listening">Connecting to Device</p>
-				<p class="event received"><a id="send" href="#">send me roses</a></p>
+				<p class="event received"><a id="send" href="#">hit me!</a></p>
 				<p id="test"></p>
 			</div>
 		</div>
