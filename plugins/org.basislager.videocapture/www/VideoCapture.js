@@ -8,11 +8,11 @@ var VideoCapture = function(device) {
 	this.device = device;
 }
 
-OSCListener.prototype.startCapture = function(successCallback, errorCallback){
+VideoCapture.prototype.startCapture = function(successCallback, errorCallback){
 	cordova.exec(successCallback, errorCallback, "VideoCapture", "startCapture", [this.device]);
 }
 
-OSCListener.prototype.stopCapture = function(successCallback){
+VideoCapture.prototype.stopCapture = function(successCallback){
 	cordova.exec(successCallback, function(err){
 		console.log(err);
 	}, "VideoCapture", "stopCapture", [this.device]);

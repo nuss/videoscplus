@@ -2,7 +2,7 @@
     "org.basislager.videocapture": {
         "source": {
             "type": "local",
-            "path": "VideoCapture"
+            "path": "/home/stefan/phonegap/VideoCapture"
         },
         "is_top_level": true,
         "variables": {}

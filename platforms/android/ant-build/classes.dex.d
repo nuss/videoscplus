@@ -72,4 +72,3 @@
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/classes/com/mediamatrixdoo/keepscreenon/KeepScreenOn$2.class \
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/dexedLibs/classes-fe68aa2e3490e15426e7741f63c0f514.jar \
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/dexedLibs/JavaOsc-3a79f0c920637fc02b7f797d56c7d817.jar \
-/home/stefan/phonegap/videoscplus/platforms/android/ant-build/dexedLibs/VideoCapture-208e78d09ac0a67f4ab09885860d9faa.jar \

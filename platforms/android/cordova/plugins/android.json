@@ -11,10 +11,6 @@
                         {
                             "xml": "<feature name=\"OSC\"><param name=\"android-package\" value=\"nl.sylvain.cordova.osc.OSCUtils\" /></feature>",
                             "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"VideoCapture\"><param name=\"android-package\" value=\"org.basislager.videocapture.VideoCapture\" /></feature>",
-                            "count": 1
                         }
                     ]
                 }
@@ -25,10 +21,6 @@
                         {
                             "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
                             "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
-                            "count": 1
                         }
                     ]
                 }
@@ -37,9 +29,6 @@
     },
     "installed_plugins": {
         "nl.sylvain.cordova.osc": {
-            "PACKAGE_NAME": "org.basislager.videoscplus"
-        },
-        "org.basislager.videocapture": {
             "PACKAGE_NAME": "org.basislager.videoscplus"
         }
     },

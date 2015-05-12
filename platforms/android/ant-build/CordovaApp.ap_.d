@@ -38,9 +38,12 @@
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/src \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/cordova_plugins.js \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/com.mediamatrixdoo.keepscreenon \
+/home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/org.basislager.videocapture \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/nl.sylvain.cordova.osc \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/com.mediamatrixdoo.keepscreenon/www \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/com.mediamatrixdoo.keepscreenon/www/keepscreenon.js \
+/home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/org.basislager.videocapture/www \
+/home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/org.basislager.videocapture/www/VideoCapture.js \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/nl.sylvain.cordova.osc/www \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/nl.sylvain.cordova.osc/www/OSCSender.js \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/nl.sylvain.cordova.osc/www/OSCListener.js \
