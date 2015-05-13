@@ -3,6 +3,7 @@
 /home/stefan/phonegap/videoscplus/platforms/android/res/drawable-port-mdpi/screen.png \
 /home/stefan/phonegap/videoscplus/platforms/android/res/drawable-land-xhdpi/screen.png \
 /home/stefan/phonegap/videoscplus/platforms/android/res/xml/config.xml \
+/home/stefan/phonegap/videoscplus/platforms/android/res/layout-land/canvascamera.xml \
 /home/stefan/phonegap/videoscplus/platforms/android/res/drawable-port-ldpi/screen.png \
 /home/stefan/phonegap/videoscplus/platforms/android/res/drawable/icon.png \
 /home/stefan/phonegap/videoscplus/platforms/android/res/drawable-port-hdpi/screen.png \
@@ -11,8 +12,17 @@
 /home/stefan/phonegap/videoscplus/platforms/android/res/drawable-land-hdpi/screen.png \
 /home/stefan/phonegap/videoscplus/platforms/android/res/drawable-land-ldpi/screen.png \
 /home/stefan/phonegap/videoscplus/platforms/android/res/drawable-port-xhdpi/screen.png \
+/home/stefan/phonegap/videoscplus/platforms/android/res/layout/canvascamera.xml \
+/home/stefan/phonegap/videoscplus/platforms/android/res/drawable-hdpi/camera.png \
+/home/stefan/phonegap/videoscplus/platforms/android/res/drawable-hdpi/video_sprites_focus_inactive.png \
 /home/stefan/phonegap/videoscplus/platforms/android/res/drawable-hdpi/icon.png \
+/home/stefan/phonegap/videoscplus/platforms/android/res/drawable-hdpi/video_sprites_revert.png \
+/home/stefan/phonegap/videoscplus/platforms/android/res/drawable-hdpi/video_sprites_revert_inactive.png \
+/home/stefan/phonegap/videoscplus/platforms/android/res/drawable-hdpi/video_sprites_focus.png \
+/home/stefan/phonegap/videoscplus/platforms/android/res/drawable-hdpi/video_sprites_close.png \
+/home/stefan/phonegap/videoscplus/platforms/android/res/values/color.xml \
 /home/stefan/phonegap/videoscplus/platforms/android/res/values/strings.xml \
+/home/stefan/phonegap/videoscplus/platforms/android/res/values/styles.xml \
 /home/stefan/phonegap/videoscplus/platforms/android/res/drawable-land-mdpi/screen.png \
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/res/drawable-xhdpi/icon.png \
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/res/drawable-port-mdpi/screen.png \
@@ -25,7 +35,13 @@
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/res/drawable-land-hdpi/screen.png \
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/res/drawable-land-ldpi/screen.png \
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/res/drawable-port-xhdpi/screen.png \
+/home/stefan/phonegap/videoscplus/platforms/android/ant-build/res/drawable-hdpi/camera.png \
+/home/stefan/phonegap/videoscplus/platforms/android/ant-build/res/drawable-hdpi/video_sprites_focus_inactive.png \
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/res/drawable-hdpi/icon.png \
+/home/stefan/phonegap/videoscplus/platforms/android/ant-build/res/drawable-hdpi/video_sprites_revert.png \
+/home/stefan/phonegap/videoscplus/platforms/android/ant-build/res/drawable-hdpi/video_sprites_revert_inactive.png \
+/home/stefan/phonegap/videoscplus/platforms/android/ant-build/res/drawable-hdpi/video_sprites_focus.png \
+/home/stefan/phonegap/videoscplus/platforms/android/ant-build/res/drawable-hdpi/video_sprites_close.png \
 /home/stefan/phonegap/videoscplus/platforms/android/ant-build/res/drawable-land-mdpi/screen.png \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/_where-is-www.txt \
@@ -40,6 +56,7 @@
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/com.mediamatrixdoo.keepscreenon \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/org.basislager.videocapture \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/nl.sylvain.cordova.osc \
+/home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/com.keith.cordova.plugin.canvascamera \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/com.mediamatrixdoo.keepscreenon/www \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/com.mediamatrixdoo.keepscreenon/www/keepscreenon.js \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/org.basislager.videocapture/www \
@@ -47,6 +64,8 @@
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/nl.sylvain.cordova.osc/www \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/nl.sylvain.cordova.osc/www/OSCSender.js \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/nl.sylvain.cordova.osc/www/OSCListener.js \
+/home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/com.keith.cordova.plugin.canvascamera/www \
+/home/stefan/phonegap/videoscplus/platforms/android/assets/www/plugins/com.keith.cordova.plugin.canvascamera/www/CanvasCamera.js \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/js/index.js \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/img/icon.png \
 /home/stefan/phonegap/videoscplus/platforms/android/assets/www/img/logo.png \

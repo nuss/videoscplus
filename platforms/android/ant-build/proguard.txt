@@ -1,3 +1,6 @@
-# view AndroidManifest.xml #generated:9
+# view AndroidManifest.xml #generated:14
+-keep class com.keith.canvascameraplugin.CanvasCameraView { <init>(...); }
+
+# view AndroidManifest.xml #generated:8
 -keep class org.basislager.videoscplus.CordovaApp { <init>(...); }
 

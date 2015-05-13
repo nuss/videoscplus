@@ -1,4 +1,4 @@
-package VideoCapture;
+package org.basislager.VideoCapture;
 
 import java.net.InetAddress;
 import java.net.SocketException;
@@ -23,11 +23,10 @@ import android.util.Log;
 
 public class VideoCapture extends CordovaPlugin {
 	private static final String TAG = "VideoCapture";
-	private final CameraManager mCameraManager = (CameraManager) context
-			.getSystemService(Context.CAMERA_SERVICE);;
+//	private final CameraManager mCameraManager = (CameraManager) context
+//			.getSystemService(Context.CAMERA_SERVICE);;
 	private CameraDevice mCameraDevice;
 	private CameraCaptureSession mCameraSession;
-
 	private static Context context;
 	private static final CameraManager manager = (CameraManager) context
 			.getSystemService(Context.CAMERA_SERVICE);

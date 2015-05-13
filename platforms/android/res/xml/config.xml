@@ -7,6 +7,9 @@
     <feature name="VideoCapture">
         <param name="android-package" value="org.basislager.videocapture.VideoCapture" />
     </feature>
+    <feature name="CanvasCamera">
+        <param name="android-package" value="com.keith.canvascameraplugin.CanvasCamera" />
+    </feature>
     <feature name="KeepScreenOn">
         <param name="android-package" value="com.mediamatrixdoo.keepscreenon.KeepScreenOn" />
     </feature>

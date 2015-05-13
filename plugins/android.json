@@ -15,6 +15,10 @@
                         {
                             "xml": "<feature name=\"VideoCapture\"><param name=\"android-package\" value=\"org.basislager.videocapture.VideoCapture\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"CanvasCamera\"><param name=\"android-package\" value=\"com.keith.canvascameraplugin.CanvasCamera\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -28,6 +32,38 @@
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<activity android:label=\"@string/app_name\" android:name=\"com.keith.canvascameraplugin.CanvasCameraView\" android:theme=\"@android:style/Theme.Black.NoTitleBar\"></activity>",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.RECORD_VIDEO\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.camera\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.camera.autofocus\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.camera.setParameters\" />",
                             "count": 1
                         }
                     ]
@@ -53,6 +89,9 @@
             "PACKAGE_NAME": "org.basislager.videoscplus"
         },
         "org.basislager.videocapture": {
+            "PACKAGE_NAME": "org.basislager.videoscplus"
+        },
+        "com.keith.cordova.plugin.canvascamera": {
             "PACKAGE_NAME": "org.basislager.videoscplus"
         }
     },

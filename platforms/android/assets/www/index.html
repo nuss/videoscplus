@@ -29,9 +29,10 @@
 		<title>VideOSC+</title>
 		<script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
-		<script type="text/javascript" src="videocapture.js"></script>
+		<!-- <script type="text/javascript" src="VideoCapture.js"></script> -->
 		<script type="text/javascript">
 		var sender, listener;
+		var capture;
 		var count = 0;
 
 		function onLoad() {
@@ -46,11 +47,11 @@
 			document.getElementById('send').addEventListener('click', sendOnClick, false);
 
 			// console.log([window.innerWidth, window.innerHeight]);
-			console.log(["sender: "+sender, "listener: "+listener]);
-			// sender = new OSCSender('192.168.1.4', 57120);
-			sender = new OSCSender('10.42.0.1', 57120);
+			// console.log(["sender: "+sender, "listener: "+listener]);
+			sender = new OSCSender('192.168.1.8', 57120);
+			// sender = new OSCSender('10.42.0.1', 57120);
 			listener = new OSCListener(9000);
-			console.log(["sender: "+sender, "listener: "+listener]);
+			// console.log(["sender: "+sender, "listener: "+listener]);
 			// capture.startCapture(function(success) {
 			// 	console.log(success);
 			// }, function(err) { console.log("error: "+err) });
@@ -60,7 +61,10 @@
 			listener.on('/reply', function(success) {
 				document.getElementById("test").innerHTML = success[0];
 			});
-			var capture = new VideoCapture('test');
+			capture = new VideoCapture('test');
+			capture.startCapture(function(success) {
+				console.log(success);
+			}, function(err) { console.log(err) });
 		}
 
 		function sendOnClick() {
@@ -73,10 +77,10 @@
 		}
 
 		window.onunload = function() {
-			console.log('unloaded!');
 			listener.close(function(success) {
 				console.log(success)
 			}, function(err) { console.log(err)});
+			capture.stopCapture();
 		}
 
 		</script>
@@ -90,5 +94,8 @@
 				<p id="test"></p>
 			</div>
 		</div>
+		<canvas id="camera">
+
+		</canvas>
 	</body>
 </html>
