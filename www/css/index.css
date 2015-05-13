@@ -72,8 +72,8 @@ body {
 }
 
 #camera {
-	width: 100%;
-	height: 360px;
+	/*width: inherit;*/
+	/*height: inherit;*/
 	background-color: lime;
 }
 

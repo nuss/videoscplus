@@ -97,7 +97,7 @@ public class CanvasCameraView extends Activity implements SurfaceHolder.Callback
 
         bFlash = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean(CanvasCamera.FLASH, false);
         bRevert = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean(CanvasCamera.REVERT, true);
-        
+
         getControlVariables();
         initializeUI();
 
@@ -340,7 +340,7 @@ public class CanvasCameraView extends Activity implements SurfaceHolder.Callback
                         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyymmddhhmmss");
                         String date = dateFormat.format(new Date());
                         returnInfo.put("lastModifiedDate", date);
-                        
+
                         returnInfo.put("size", String.valueOf(blob.size()));
                         returnInfo.put("type", (_encodeType == EncodingTypeJPEG ? "image/jpeg" : "image/png"));
                     }
@@ -350,9 +350,9 @@ public class CanvasCameraView extends Activity implements SurfaceHolder.Callback
                     }
 
                     CanvasCamera.sharedCanvasCamera.onTakePicture(returnInfo);
-                    
+
                     m_prgDialog.dismiss();
-                    
+
                     m_camera.startPreview();
                 }
             });

@@ -33,6 +33,7 @@
 		<!-- <script type="text/javascript" src="VideoCapture.js"></script> -->
 		<script type="text/javascript">
 		var sender, listener;
+		var canvas;
 		var capture;
 		var count = 0;
 
@@ -46,8 +47,11 @@
 
 			document.getElementById("test").innerHTML = "loaded!";
 			document.getElementById('send').addEventListener('click', sendOnClick, false);
-
-			console.log([window.innerWidth, window.innerHeight, window.devicePixelRatio]);
+			canvas = document.getElementById('camera');
+			// console.log(Object.getPrototypeOf(canvas));
+			canvas.style.width = window.innerWidth+"px";
+			canvas.style.height = window.innerHeight+"px";
+			// console.log([window.innerWidth, window.innerHeight, window.devicePixelRatio, window.orientation]);
 			// console.log(["sender: "+sender, "listener: "+listener]);
 			sender = new OSCSender('192.168.1.8', 57120);
 			// sender = new OSCSender('10.42.0.1', 57120);
@@ -62,10 +66,20 @@
 			listener.on('/reply', function(success) {
 				document.getElementById("test").innerHTML = success[0];
 			});
-			capture = new VideoCapture('test');
-			capture.startCapture(function(success) {
-				console.log(success);
-			}, function(err) { console.log(err) });
+			CanvasCamera.initialize(canvas);
+			var options = {
+				quality: 100,
+				destinationType: CanvasCamera.DestinationType.DATA_URL,
+				encodingType: CanvasCamera.EncodingType.PNG,
+				correctOrientation: true,
+				width: 6,
+				height: 4
+			};
+			CanvasCamera.start(options);
+			// capture = new VideoCapture('test');
+			// capture.startCapture(function(success) {
+			// 	console.log(success);
+			// }, function(err) { console.log(err) });
 		}
 
 		function sendOnClick() {
@@ -95,8 +109,6 @@
 				<p id="test"></p>
 			</div>
 		</div>
-		<canvas id="camera">
-
-		</canvas>
+		<canvas id="camera"></canvas>
 	</body>
 </html>
