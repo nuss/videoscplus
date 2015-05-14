@@ -6,15 +6,5 @@
         },
         "is_top_level": true,
         "variables": {}
-    },
-    "com.keith.cordova.plugin.canvascamera": {
-        "source": {
-            "type": "git",
-            "url": "https://github.com/gmccrackin/CanvasCameraPlugin",
-            "subdir": ".",
-            "ref": "e9f0b1959bacd8b0370d2593e7967bbb6efaf6a3"
-        },
-        "is_top_level": true,
-        "variables": {}
     }
 }

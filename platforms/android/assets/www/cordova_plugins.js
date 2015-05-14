@@ -27,14 +27,6 @@ module.exports = [
         "clobbers": [
             "window.VideoCapture"
         ]
-    },
-    {
-        "file": "plugins/com.keith.cordova.plugin.canvascamera/www/CanvasCamera.js",
-        "id": "com.keith.cordova.plugin.canvascamera.CanvasCamera",
-        "clobbers": [
-            "plugin.CanvasCamera",
-            "CanvasCamera"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -42,8 +34,7 @@ module.exports.metadata =
 {
     "nl.sylvain.cordova.osc": "0.1.0",
     "com.mediamatrixdoo.keepscreenon": "1.0.1",
-    "org.basislager.videocapture": "0.0.1",
-    "com.keith.cordova.plugin.canvascamera": "1.0.0dev"
+    "org.basislager.videocapture": "0.0.1"
 }
 // BOTTOM OF METADATA
 });

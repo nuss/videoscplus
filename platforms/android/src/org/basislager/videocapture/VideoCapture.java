@@ -1,4 +1,4 @@
-package org.basislager.VideoCapture;
+package org.basislager.videocapture;
 
 import java.net.InetAddress;
 import java.net.SocketException;
@@ -23,26 +23,29 @@ import android.util.Log;
 
 public class VideoCapture extends CordovaPlugin {
 	private static final String TAG = "VideoCapture";
-//	private final CameraManager mCameraManager = (CameraManager) context
-//			.getSystemService(Context.CAMERA_SERVICE);;
 	private CameraDevice mCameraDevice;
 	private CameraCaptureSession mCameraSession;
 	private static Context context;
-	private static final CameraManager manager = (CameraManager) context
+	private CameraManager manager = (CameraManager) context
 			.getSystemService(Context.CAMERA_SERVICE);
 
 	/* constructor */
 	public VideoCapture() {
+		Log.v(TAG, "class VideoCapture initialized");
 	}
 
 	public boolean execute(String action, JSONArray args,
 			CallbackContext callbackContext) throws JSONException {
+		Log.v(TAG, "execution invoked");
 		try {
 			if (action.equals("startCapture")) {
-				Log.d(TAG, "start capturing");
+				Log.v(TAG, "start capturing");
 				startCapture(args.getInt(0), callbackContext);
 			} else if (action.equals("stopCapture")) {
 				stopCapture(args.getInt(0), callbackContext);
+			} else if (action.equals("setResolution")) {
+				setResolution(args.getInt(0), args.getInt(1), args.getInt(2),
+						callbackContext);
 			} else {
 				return false;
 			}
@@ -55,9 +58,14 @@ public class VideoCapture extends CordovaPlugin {
 
 	private void startCapture(final int deviceID,
 			final CallbackContext callbackContext) {
+		Log.v(TAG, "StartCapture called");
 	}
 
 	private void stopCapture(final int deviceID,
+			final CallbackContext callbackContext) {
+	}
+
+	private void setResolution(final int deviceID, int width, int height,
 			final CallbackContext callbackContext) {
 	}
 }
