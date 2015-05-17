@@ -1,4 +1,4 @@
-package VideoCapture;
+package org.basislager.videoCapture;
 
 import java.net.InetAddress;
 import java.net.SocketException;

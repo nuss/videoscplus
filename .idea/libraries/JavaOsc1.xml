@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="JavaOsc1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/platforms/android/libs/JavaOsc.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

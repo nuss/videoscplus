@@ -2,7 +2,7 @@
 <widget id="org.basislager.videoscplus" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 	<name>VideOSC+</name>
 	<description>
-		A experimental OSC-controller built with phonegap.
+		An experimental OSC-controller built with phonegap.
 	</description>
 	<author email="stefan@basislager.org" href="http://pustota.basislager.org">
 		Stefan Nussbaumer
