@@ -9,11 +9,11 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"OSC\"><param name=\"android-package\" value=\"nl.sylvain.cordova.osc.OSCUtils\" /></feature>",
+                            "xml": "<feature name=\"VideoCapture\"><param name=\"android-package\" value=\"org.basislager.videocapture.VideoCapture\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"VideoCapture\"><param name=\"android-package\" value=\"org.basislager.videocapture.VideoCapture\" /></feature>",
+                            "xml": "<feature name=\"OSC\"><param name=\"android-package\" value=\"nl.sylvain.cordova.osc.OSCUtils\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -23,11 +23,11 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
                             "count": 1
                         },
                         {
-                            "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
                             "count": 1
                         }
                     ],
@@ -48,13 +48,13 @@
         }
     },
     "installed_plugins": {
-        "nl.sylvain.cordova.osc": {
-            "PACKAGE_NAME": "org.basislager.videoscplus"
-        },
         "com.mediamatrixdoo.keepscreenon": {
             "PACKAGE_NAME": "org.basislager.videoscplus"
         },
         "org.basislager.videocapture": {
+            "PACKAGE_NAME": "org.basislager.videoscplus"
+        },
+        "nl.sylvain.cordova.osc": {
             "PACKAGE_NAME": "org.basislager.videoscplus"
         }
     },
