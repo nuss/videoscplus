@@ -86,7 +86,7 @@
 
 			/* org.basislager.videocapture */
 			capture = new VideoCapture();
-			capture.startCapture(function(success) {
+			capture.openCamera(1, function(success) {
 				console.log(success);
 			}, function(err) { console.log(err) });
 		}

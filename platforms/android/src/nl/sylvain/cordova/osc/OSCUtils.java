@@ -291,7 +291,7 @@ public class OSCUtils extends CordovaPlugin {
        	return oscport;
     }
     
-    private String createOutKey(String host, int port){
+    private String createOutKey(String host, int port) {
     	return host + ":" + port;
     }
     

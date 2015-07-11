@@ -1,11 +1,15 @@
 cordova.define("org.basislager.videocapture.VideoCapture", function(require, exports, module) { // var exec = require('cordova/exec');
 
-// exports.coolMethod = function(arg0, success, error) {
-//     exec(success, error, "VideoCapture", "coolMethod", [arg0]);
-// };
+var VideoCapture = function() {
 
-var VideoCapture = function(device) {
+}
+
+/*
+ * @param device: 0 -> front-side camera, 1 -> back-side camera
+ */
+VideoCapture.prototype.openCamera = function(device, successCallback, errorCallback) {
 	this.device = device;
+	cordova.exec(successCallback, errorCallback, "VideoCapture", "openCamera", [this.device]);
 }
 
 VideoCapture.prototype.startCapture = function(successCallback, errorCallback){
@@ -16,6 +20,10 @@ VideoCapture.prototype.stopCapture = function(successCallback){
 	cordova.exec(successCallback, function(err){
 		console.log(err);
 	}, "VideoCapture", "stopCapture", [this.device]);
+}
+
+VideoCapture.prototype.setResolution = function(width, height, successCallback, errorCallback) {
+	cordova.exec(successCallback, errorCallback, "VideoCapture", "setResolution", [this.device]);
 }
 
 module.exports = VideoCapture;

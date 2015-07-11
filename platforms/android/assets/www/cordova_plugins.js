@@ -29,7 +29,7 @@ module.exports = [
         ]
     }
 ];
-module.exports.metadata = 
+module.exports.metadata =
 // TOP OF METADATA
 {
     "com.mediamatrixdoo.keepscreenon": "1.0.1",

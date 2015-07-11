@@ -85,9 +85,10 @@
 			// CanvasCamera.start(options);
 
 			/* org.basislager.videocapture */
-			capture = new VideoCapture(0);
-			capture.startCapture(function(success) {
-				console.log(success);
+			capture = new VideoCapture();
+			// @param 'device': 1-> backside camera, 0 -> frontside camera
+			capture.openCamera(1, function(success) {
+				document.getElementById("test").innerHTML += "<br>"+success;
 			}, function(err) { console.log(err) });
 		}
 

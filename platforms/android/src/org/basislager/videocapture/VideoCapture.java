@@ -30,7 +30,7 @@ import android.hardware.camera2.CameraManager;
 //import android.hardware.Camera.Size;
 //import android.hardware.camera2.CameraAccessException;
 //import android.hardware.camera2.CameraCaptureSession;
-//import android.hardware.camera2.CameraCharacteristics;
+import android.hardware.camera2.CameraCharacteristics;
 //import android.hardware.camera2.CameraDevice;
 //import android.hardware.camera2.CameraManager;
 //import android.hardware.camera2.params.StreamConfigurationMap;
@@ -40,6 +40,8 @@ import android.util.Log;
 public class VideoCapture extends CordovaPlugin {
 	private static final String TAG = "VideoCapture";
 	protected CameraManager manager;
+	private static int vDeviceID;
+	protected CameraCharacteristics cameraCharacteristics;
 	// private CameraDevice mCameraDevice;
 	// private CameraCaptureSession mCameraSession;
 	// private String mCameraId;
@@ -58,13 +60,14 @@ public class VideoCapture extends CordovaPlugin {
 
 		Log.d(TAG, "execution invoked");
 		try {
-			if (action.equals("startCapture")) {
-				startCapture(args.getInt(0), callbackContext);
+			if (action.equals("openCamera")) {
+				openCamera(args.getInt(0), callbackContext);
+			} else if (action.equals("startCapture")) {
+				startCapture(callbackContext);
 			} else if (action.equals("stopCapture")) {
-				stopCapture(args.getInt(0), callbackContext);
+				stopCapture(callbackContext);
 			} else if (action.equals("setResolution")) {
-				setResolution(args.getInt(0), args.getInt(1), args.getInt(2),
-						callbackContext);
+				setResolution(args.getInt(0), args.getInt(1), callbackContext);
 			} else {
 				return false;
 			}
@@ -75,15 +78,28 @@ public class VideoCapture extends CordovaPlugin {
 		return true;
 	}
 
-	private void startCapture(final int deviceID, final CallbackContext callbackContext) {
+	private void openCamera(final int deviceID, final CallbackContext callbackContext) {
 		cordova.getThreadPool().execute(new Runnable() {
 			public void run() {
 				try {
+					String successMsg = "";
 					Context context = cordova.getActivity().getApplicationContext();
 					CameraManager manager = (CameraManager) context.getSystemService(Context.CAMERA_SERVICE);
-					System.out.println("manager: "+manager);
+//					System.out.println("manager: "+manager);
+//					String[] deviceList = manager.getCameraIdList();
+					for (String id : manager.getCameraIdList()) {
+						CameraCharacteristics c = manager.getCameraCharacteristics(id);
+						if(c.get(CameraCharacteristics.LENS_FACING) == deviceID) {
+							vDeviceID = deviceID;
+							if(vDeviceID == cameraCharacteristics.LENS_FACING_BACK) {
+								successMsg = "Successfully opened backside camera";
+							} else if (vDeviceID == cameraCharacteristics.LENS_FACING_FRONT) {
+								successMsg = "Successfully opened frontside camera";
+							}
+						};
+					}
 					// callback to OK
-					callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
+					callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, successMsg));
 				} catch (Exception e) {
 					callbackContext.error(e.getMessage());
 				}
@@ -91,8 +107,11 @@ public class VideoCapture extends CordovaPlugin {
 		});
 	}
 
-	private void stopCapture(final int deviceID,
-			final CallbackContext callbackContext) {
+	private void startCapture(final CallbackContext callbackContext) {
+
+	}
+
+	private void stopCapture(final CallbackContext callbackContext) {
 		cordova.getThreadPool().execute(new Runnable() {
 			public void run() {
 				try {
@@ -107,8 +126,8 @@ public class VideoCapture extends CordovaPlugin {
 		});
 	}
 
-	private void setResolution(final int deviceID, int width, int height,
-			final CallbackContext callbackContext) {
+	private void setResolution(int width, int height, final CallbackContext callbackContext) {
+
 	}
 
 }

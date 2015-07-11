@@ -1,4 +1,4 @@
-cordova.define("nl.sylvain.cordova.osc.OSCListener", function(require, exports, module) { 
+cordova.define("nl.sylvain.cordova.osc.OSCListener", function(require, exports, module) {
 var OSCListener = function(port){
 	this.port = port;
 }
