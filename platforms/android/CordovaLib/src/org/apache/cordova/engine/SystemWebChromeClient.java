@@ -32,6 +32,7 @@ import android.webkit.ConsoleMessage;
 import android.webkit.GeolocationPermissions.Callback;
 import android.webkit.JsPromptResult;
 import android.webkit.JsResult;
+import android.webkit.PermissionRequest;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebStorage;
@@ -43,6 +44,8 @@ import android.widget.RelativeLayout;
 import org.apache.cordova.CordovaDialogsHelper;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.LOG;
+
+import java.util.Arrays;
 
 /**
  * This class is the WebChromeClient that implements callbacks for our web view.
@@ -264,6 +267,13 @@ public class SystemWebChromeClient extends WebChromeClient {
             filePathsCallback.onReceiveValue(null);
         }
         return true;
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    @Override
+    public void onPermissionRequest(final PermissionRequest request) {
+        Log.d(LOG_TAG, "onPermissionRequest: " + Arrays.toString(request.getResources()));
+        request.grant(request.getResources());
     }
 
     public void destroyLastDialog(){

@@ -11,49 +11,50 @@ package org.basislager.videocapture;
 //import java.util.Map;
 //import java.util.Map.Entry;
 
+import android.content.Context;
+import android.hardware.camera2.CameraAccessException;
+import android.hardware.camera2.CameraCaptureSession;
+import android.hardware.camera2.CameraCharacteristics;
+import android.hardware.camera2.CameraDevice;
+import android.hardware.camera2.CameraManager;
+import android.os.Handler;
+import android.util.Log;
+
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
-//import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.hardware.camera2.CameraAccessException;
-import android.hardware.camera2.CameraManager;
+//import org.apache.cordova.PluginResult;
 //import android.annotation.SuppressLint;
 //import android.app.Activity;
 //import android.content.Intent;
 //import android.graphics.ImageFormat;
 //import android.hardware.Camera.Size;
 //import android.hardware.camera2.CameraAccessException;
-//import android.hardware.camera2.CameraCaptureSession;
-import android.hardware.camera2.CameraCharacteristics;
-//import android.hardware.camera2.CameraDevice;
 //import android.hardware.camera2.CameraManager;
 //import android.hardware.camera2.params.StreamConfigurationMap;
-import android.os.Bundle;
-import android.util.Log;
 
 public class VideoCapture extends CordovaPlugin {
 	private static final String TAG = "VideoCapture";
 	protected CameraManager manager;
+	private CameraDevice mCameraDevice;
+	private CameraCaptureSession mCameraSession;
 	private static int vDeviceID;
 	protected CameraCharacteristics cameraCharacteristics;
-	// private CameraDevice mCameraDevice;
-	// private CameraCaptureSession mCameraSession;
-	// private String mCameraId;
-
-
+	private final ErrorDisplayer mErrorDisplayer;
+	private final CameraReadyListener mReadyListener;
+	private final Handler mReadyHandler;
 
 	// constructor
-//	public VideoCapture(Context context, CameraManager manager) {
-	public VideoCapture() {
-//		CameraContext context = new CameraContext(cordova.getActivity().getApplicationContext());
-//		manager = context.getCameraManager();
-//		Log.d(TAG, "manager: "+manager);
+	//	public VideoCapture(Context context, CameraManager manager) {
+	public VideoCapture(ErrorDisplayer errorDisplayer, CameraReadyListener readyListener, Handler
+						readyHandler) {
+//		mCameraManager = cameraManager;
+		mErrorDisplayer = errorDisplayer;
+		mReadyListener = readyListener;
+		mReadyHandler = readyHandler;
 	}
 
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -95,8 +96,14 @@ public class VideoCapture extends CordovaPlugin {
 								successMsg = "Successfully opened backside camera";
 							} else if (vDeviceID == cameraCharacteristics.LENS_FACING_FRONT) {
 								successMsg = "Successfully opened frontside camera";
+							} else {
+								successMsg = "Successfully opened device "+vDeviceID;
 							}
 						};
+						for (android.util.Size size : c.get(CameraCharacteristics
+								.JPEG_AVAILABLE_THUMBNAIL_SIZES)) {
+							System.out.println(id+": "+size);
+						}
 					}
 					// callback to OK
 					callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, successMsg));
@@ -128,6 +135,54 @@ public class VideoCapture extends CordovaPlugin {
 
 	private void setResolution(int width, int height, final CallbackContext callbackContext) {
 
+	}
+
+	/**
+	 * Main listener for camera session events
+	 * Invoked on mCameraThread
+	 */
+	private CameraCaptureSession.StateCallback mCameraSessionListener = new CameraCaptureSession
+			.StateCallback() {
+
+		@Override
+		public void onConfigured(CameraCaptureSession session) {
+			mCameraSession = session;
+			mReadyHandler.post(new Runnable() {
+				public void run() {
+					// This can happen when the screen is turned off and turned back on.
+					if (null == mCameraDevice) {
+						return;
+					}
+
+					mReadyListener.onCameraReady();
+				}
+			});
+
+		}
+
+		@Override
+		public void onConfigureFailed(CameraCaptureSession session) {
+			mErrorDisplayer.showErrorDialog("Unable to configure the capture session");
+			mCameraDevice.close();
+			mCameraDevice = null;
+		}
+	};
+
+	/**
+	 * Simple listener for main code to know the camera is ready for requests, or failed to
+	 * start.
+	 */
+	public interface CameraReadyListener {
+		public void onCameraReady();
+	}
+
+	/**
+	 * Simple listener for displaying error messages
+	 */
+	public interface ErrorDisplayer {
+		public void showErrorDialog(String errorMessage);
+
+		public String getErrorString(CameraAccessException e);
 	}
 
 }

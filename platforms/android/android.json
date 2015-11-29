@@ -1,0 +1,99 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"KeepScreenOn\"><param name=\"android-package\" value=\"com.mediamatrixdoo.keepscreenon.KeepScreenOn\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"VideoCapture\"><param name=\"android-package\" value=\"org.basislager.videocapture.VideoCapture\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"OSC\"><param name=\"android-package\" value=\"nl.sylvain.cordova.osc.OSCUtils\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.mediamatrixdoo.keepscreenon": {
+            "PACKAGE_NAME": "org.basislager.videoscplus"
+        },
+        "org.basislager.videocapture": {
+            "PACKAGE_NAME": "org.basislager.videoscplus"
+        },
+        "nl.sylvain.cordova.osc": {
+            "PACKAGE_NAME": "org.basislager.videoscplus"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/com.mediamatrixdoo.keepscreenon/www/keepscreenon.js",
+            "id": "com.mediamatrixdoo.keepscreenon.keepscreenon",
+            "pluginId": "com.mediamatrixdoo.keepscreenon",
+            "clobbers": [
+                "keepscreenon"
+            ]
+        },
+        {
+            "file": "plugins/org.basislager.videocapture/www/VideoCapture.js",
+            "id": "org.basislager.videocapture.VideoCapture",
+            "pluginId": "org.basislager.videocapture",
+            "clobbers": [
+                "window.VideoCapture"
+            ]
+        },
+        {
+            "file": "plugins/nl.sylvain.cordova.osc/www/OSCListener.js",
+            "id": "nl.sylvain.cordova.osc.OSCListener",
+            "pluginId": "nl.sylvain.cordova.osc",
+            "clobbers": [
+                "window.OSCListener"
+            ]
+        },
+        {
+            "file": "plugins/nl.sylvain.cordova.osc/www/OSCSender.js",
+            "id": "nl.sylvain.cordova.osc.OSCSender",
+            "pluginId": "nl.sylvain.cordova.osc",
+            "clobbers": [
+                "window.OSCSender"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "com.mediamatrixdoo.keepscreenon": "1.0.1",
+        "org.basislager.videocapture": "0.0.1",
+        "nl.sylvain.cordova.osc": "0.1.0"
+    }
+}

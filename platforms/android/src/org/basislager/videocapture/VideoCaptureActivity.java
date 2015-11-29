@@ -1,8 +1,6 @@
 package org.basislager.videocapture;
 
 import android.app.Activity;
-import android.content.Context;
-import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
 import android.util.Log;
 

@@ -1,5 +1,18 @@
 package nl.sylvain.cordova.osc;
 
+import android.util.SparseArray;
+
+import com.illposed.osc.OSCListener;
+import com.illposed.osc.OSCMessage;
+import com.illposed.osc.OSCPortIn;
+import com.illposed.osc.OSCPortOut;
+
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.PluginResult;
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
@@ -8,19 +21,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import org.apache.cordova.CallbackContext;
-import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.PluginResult;
-import org.json.JSONArray;
-import org.json.JSONException;
-
-import com.illposed.osc.OSCListener;
-import com.illposed.osc.OSCMessage;
-import com.illposed.osc.OSCPortIn;
-import com.illposed.osc.OSCPortOut;
-
-import android.util.SparseArray;
 
 public class OSCUtils extends CordovaPlugin {
 
@@ -291,7 +291,7 @@ public class OSCUtils extends CordovaPlugin {
        	return oscport;
     }
     
-    private String createOutKey(String host, int port) {
+    private String createOutKey(String host, int port){
     	return host + ":" + port;
     }
     

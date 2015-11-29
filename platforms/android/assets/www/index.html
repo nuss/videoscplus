@@ -52,7 +52,7 @@
 			canvas.style.height = window.innerHeight+"px";
 			// console.log([window.innerWidth, window.innerHeight, window.devicePixelRatio, window.orientation]);
 			// console.log(["sender: "+sender, "listener: "+listener]);
-			sender = new OSCSender('192.168.1.8', 57120);
+			sender = new OSCSender('192.168.1.7', 57120);
 			// sender = new OSCSender('10.42.0.1', 57120);
 			listener = new OSCListener(9000);
 			// console.log(["sender: "+sender, "listener: "+listener]);
@@ -67,10 +67,10 @@
 			});
 
 			/* canvas test */
-			ctx = canvas.getContext('2d');
-			ctx.beginPath();
-			ctx.arc(95,50,40,0,2*Math.PI);
-			ctx.stroke();
+			// ctx = canvas.getContext('2d');
+			// ctx.beginPath();
+			// ctx.arc(95,50,40,0,2*Math.PI);
+			// ctx.stroke();
 
 			/* com.keith.cordova.plugin.canvascamera */
 			// CanvasCamera.initialize(canvas);
@@ -86,9 +86,8 @@
 
 			/* org.basislager.videocapture */
 			capture = new VideoCapture();
-			// @param 'device': 1-> backside camera, 0 -> frontside camera
 			capture.openCamera(1, function(success) {
-				document.getElementById("test").innerHTML += "<br>"+success;
+				console.log(success);
 			}, function(err) { console.log(err) });
 		}
 

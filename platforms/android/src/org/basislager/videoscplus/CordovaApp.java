@@ -20,7 +20,8 @@
 package org.basislager.videoscplus;
 
 import android.os.Bundle;
-import org.apache.cordova.*;
+
+import org.apache.cordova.CordovaActivity;
 
 public class CordovaApp extends CordovaActivity
 {

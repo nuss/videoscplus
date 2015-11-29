@@ -5,12 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/platforms/android/CordovaLib/CordovaLib.iml" filepath="$PROJECT_DIR$/platforms/android/CordovaLib/CordovaLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/platforms/android/android.iml" filepath="$PROJECT_DIR$/platforms/android/android.iml" />
       <module fileurl="file://$PROJECT_DIR$/platforms/android/build/generated/source/buildConfig/buildConfig.iml" filepath="$PROJECT_DIR$/platforms/android/build/generated/source/buildConfig/buildConfig.iml" />
-      <module fileurl="file://$PROJECT_DIR$/platforms/android/CordovaLib/build/generated/source/buildConfig/buildConfig1.iml" filepath="$PROJECT_DIR$/platforms/android/CordovaLib/build/generated/source/buildConfig/buildConfig1.iml" />
       <module fileurl="file://$PROJECT_DIR$/plugins/com.mediamatrixdoo.keepscreenon/src/com.mediamatrixdoo.keepscreenon.iml" filepath="$PROJECT_DIR$/plugins/com.mediamatrixdoo.keepscreenon/src/com.mediamatrixdoo.keepscreenon.iml" />
       <module fileurl="file://$PROJECT_DIR$/cordova/plugins/nl.sylvain.cordova.osc/src/nl.sylvain.cordova.osc.iml" filepath="$PROJECT_DIR$/cordova/plugins/nl.sylvain.cordova.osc/src/nl.sylvain.cordova.osc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/plugins/nl.sylvain.cordova.osc/src/nl.sylvain.cordova.osc1.iml" filepath="$PROJECT_DIR$/plugins/nl.sylvain.cordova.osc/src/nl.sylvain.cordova.osc1.iml" />
       <module fileurl="file://$PROJECT_DIR$/plugins/org.basislager.videocapture/src/org.basislager.videocapture.iml" filepath="$PROJECT_DIR$/plugins/org.basislager.videocapture/src/org.basislager.videocapture.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cordova/plugins/org.basislager.videocapture/org.basislager.videocapture1.iml" filepath="$PROJECT_DIR$/cordova/plugins/org.basislager.videocapture/org.basislager.videocapture1.iml" />
       <module fileurl="file://$PROJECT_DIR$/platforms/android/build/generated/source/r/r.iml" filepath="$PROJECT_DIR$/platforms/android/build/generated/source/r/r.iml" />
     </modules>
   </component>

@@ -1,11 +1,11 @@
 package com.mediamatrixdoo.keepscreenon;
 
-import org.apache.cordova.CordovaPlugin;
+import android.view.WindowManager.LayoutParams;
+
 import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 import org.json.JSONException;
-
-import android.view.WindowManager.LayoutParams;
 
 public class KeepScreenOn extends CordovaPlugin {
 
