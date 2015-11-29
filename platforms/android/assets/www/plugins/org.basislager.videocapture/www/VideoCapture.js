@@ -2,6 +2,10 @@ cordova.define("org.basislager.videocapture.VideoCapture", function(require, exp
 	this.device = device;
 }
 
+VideoCapture.prototype.openCamera = function(successCallback, errorCallback) {
+	cordova.exec(successCallback, errorCallback, "VideoCapture", "openCamera", [this.device]);
+}
+
 VideoCapture.prototype.startCapture = function(successCallback, errorCallback){
 	cordova.exec(successCallback, errorCallback, "VideoCapture", "startCapture", [this.device]);
 }

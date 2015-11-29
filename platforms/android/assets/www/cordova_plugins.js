@@ -3,7 +3,6 @@ module.exports = [
     {
         "file": "plugins/com.mediamatrixdoo.keepscreenon/www/keepscreenon.js",
         "id": "com.mediamatrixdoo.keepscreenon.keepscreenon",
-        "pluginId": "com.mediamatrixdoo.keepscreenon",
         "clobbers": [
             "keepscreenon"
         ]
@@ -11,7 +10,6 @@ module.exports = [
     {
         "file": "plugins/org.basislager.videocapture/www/VideoCapture.js",
         "id": "org.basislager.videocapture.VideoCapture",
-        "pluginId": "org.basislager.videocapture",
         "clobbers": [
             "window.VideoCapture"
         ]
@@ -19,7 +17,6 @@ module.exports = [
     {
         "file": "plugins/nl.sylvain.cordova.osc/www/OSCListener.js",
         "id": "nl.sylvain.cordova.osc.OSCListener",
-        "pluginId": "nl.sylvain.cordova.osc",
         "clobbers": [
             "window.OSCListener"
         ]
@@ -27,7 +24,6 @@ module.exports = [
     {
         "file": "plugins/nl.sylvain.cordova.osc/www/OSCSender.js",
         "id": "nl.sylvain.cordova.osc.OSCSender",
-        "pluginId": "nl.sylvain.cordova.osc",
         "clobbers": [
             "window.OSCSender"
         ]
